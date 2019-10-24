@@ -1,1 +1,10 @@
-# Command-Rshell
+# C/C++ Command Rshell
+
+## Summary of Our Project
+The main objective of our project is to create our own command shell where we can input a string of commands and execute the following commands in the correct order. In order for us to accomplish this, we have used strategy and composite patterns. In order for us to be able to parse the command string entered, we need to parse the string. To parse the string, we created a Command base class and AndConnector, OrConnector, SemicolonConnector, and CmdArgument subclasses. To connect all of the subclasses together and allow specific commands to be run, we created an rshell class and held all of our individual command and connectors in a vector made of strings. Using this vector, we can reorganize and ensure the proper vector elements are executed in an implemented execute function within the class. Our test class will include all of our test cases and make sure that the commands being run have been correctly executed.
+
+We are adding a couple new functionalities to our Rshell. We added a test command that lets us know if a file path exists. Another functionality we added is dealing with parentheses and how commands will run.
+Our program can now handle redirection and piping. It has the capability of understanding operators like “>”, “>>”, “<“, and “|”.
+## Possible Bugs
+Some bugs that we are still having a problem with are that the commands will not work if there are more than two arguments separated with a whitespace. If there is a whitespace before the connector, the execute() function does not correctly run. Another bug that we are still struggling to fix is that if there is an error that occured while executing a command or a set of commands, we have to constantly enter "exit" and after a few times, the program will terminate.
+A bug that we have encountered is that our input redirection operator exits the program once it has run. In addition, if all the piping and redirection operators are inputted in one command, our program runs into an error.
